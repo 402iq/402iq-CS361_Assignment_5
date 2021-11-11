@@ -1,13 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <meta charset="utf-8">
     <title>Calender</title>
     <link rel="stylesheet" href="style.css" media="screen">
     <script src="index.js" charset="utf-8" defer></script>
+    <script>if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+    }</script>
 
 
-    </head>
+
+</head>
 
     <body>
 
@@ -216,7 +220,7 @@
                         <textarea id="eventDescriptionInput"></textarea>
                     </div>
                     <div class="eventRemind eventInput">
-                        <label for="eventReminderInput">Reminder Time</label>
+                        <label for="eventReminderInput">Time Til Reminder (in seconds)</label>
                         <input type="text" id="eventReminderInput">
                         <button type="button" class="reminderEnabled">Enabled</button>
                     </div>
