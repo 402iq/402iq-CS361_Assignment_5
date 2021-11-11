@@ -7,16 +7,20 @@ document.querySelector('.reminderEnabled').addEventListener("click", reminderTog
 
 function reminderToggle() {
 
-    if (document.querySelector('.reminderEnabled').style.backgroundColor == "white")
+    if (document.querySelector('.reminderEnabled').style.backgroundColor == "white") {
         document.querySelector('.reminderEnabled').style.backgroundColor = "grey";
-    else
+        document.querySelector('.reminderEnabled').textContent = "Disabled";
+    }
+    else {
         document.querySelector('.reminderEnabled').style.backgroundColor = "white";
+        document.querySelector('.reminderEnabled').textContent = "Enabled";
+    }
 }
 
 function enableButtons() {
     document.querySelectorAll(".dayButton").forEach(function (item) {
         item.addEventListener("click", function () {
-            displayModal(this);
+            displayModalSpecial(this);
         });
     });
 }
@@ -67,6 +71,33 @@ function displayModal(dayButton) {
     document.querySelector('#modal').style.display = 'block';
 }
 
+function displayModalSpecial(dayButton) {
+    document.querySelector('.reminderEnabled').style.backgroundColor = "white";
+    document.querySelector('.reminderEnabled').textContent = "Enabled";
+
+    resetListeners(document.querySelector('.cGreen'))
+    document.querySelector('.cGreen').addEventListener("click", function () {
+        colorMe(this, dayButton, 1);
+    });
+
+    resetListeners(document.querySelector('.cYellow'))
+    document.querySelector('.cYellow').addEventListener("click", function () {
+        colorMe(this, dayButton, 2);
+    });
+
+    resetListeners(document.querySelector('.cPurple'))
+    document.querySelector('.cPurple').addEventListener("click", function () {
+        colorMe(this, dayButton, 3);
+    });
+
+    resetListeners(document.querySelector('.mDone'))
+    document.querySelector('.mDone').addEventListener("click", function () {
+        finalizeSpecial(dayButton);
+    });
+
+    document.querySelector('#modal').style.display = 'block';
+}
+
 
 function hideModal() {
     document.querySelector('#mBackdrop').style.display = 'none';
@@ -79,6 +110,25 @@ function hideModal() {
 function finalize(dayButton) {
     dayButton.parentElement.children[1].innerText = document.getElementById('eventTitleInput').value;
     hideModal();
+}
+
+async function finalizeSpecial(dayButton) {
+    time = parseInt(document.getElementById('eventReminderInput').value)
+    eTitle = document.getElementById('eventTitleInput').value
+    eDescrip = document.getElementById('eventDescriptionInput').value
+    dayButton.parentElement.children[1].innerText = document.getElementById('eventTitleInput').value;
+    hideModal();
+    if (document.querySelector('.reminderEnabled').style.backgroundColor == "white") {
+        const reg = await navigator.serviceWorker.getRegistration();
+        const when = new Date().getTime() + time * 1000;
+        reg.showNotification(eTitle,{
+            tag: when,
+            body: eDescrip,
+            showTrigger: new TimestampTrigger(when),
+            icon: './icons8-clock-100.png',
+            }
+        );
+    }
 }
 
 function resetListeners(button) {
