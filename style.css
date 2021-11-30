@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: lightgray;
+    background-color: #e7e7e7;
 }
 
 a {
@@ -12,12 +12,12 @@ a {
     padding: 20px 30px;
     font-size: 40px;
     font-weight: 300;
-    background-color: aquamarine;
-    color: white;
+    background-color: #322b3a;
+    color: #fcfbff;
 }
 
 .navbar {
-    background-color: white;
+    background-color: #fcfbff;
     font-size: 20px;
     line-height: 25px;
 }
@@ -32,12 +32,12 @@ a {
 }
 
 a {
-    color: black;
+    color: #322b3a;
 }
 
 a:hover,
 a:focus {
-    color: aquamarine;
+    color: #322b3a;
 }
 
 a:focus {
@@ -50,18 +50,28 @@ a:focus {
 }
 
 .navlink.active {
-    box-shadow: inset 0 -3px aquamarine;
+    border-bottom: inset;
+    border-color:#322b3a;
 }
 
 .week {
-    display:block;
+    display: block;
     padding-bottom: 5px;
-    background-color: blue;
-    width: 1600px;
+    padding-left: 10px;
+    background-color: #322b3a;
+    width: 1514px;
 }
-.day {
-    background-color: red;
-    height: 150px;
+
+    .week:first-of-type {
+        padding-top: 50px;
+    }
+    .week:last-of-type {
+        padding-bottom: 50px;
+    }
+
+    .day {
+    background-color: #fcfbff;
+    height: 140px;
     width: 200px;
     display: inline-block;
 }
@@ -69,7 +79,6 @@ a:focus {
 .eventColor {
     flex: none;
     margin-top: 5%;
-    background-color: greenyellow;
 }
 
 .eventButtons {
@@ -81,29 +90,12 @@ a:focus {
 
 #start {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
-    height: 60px;
-    width: 60px;
-    border: none;
-    border-radius: 30px;
-    background-color: aquamarine;
-    color: white;
-}
-
-#start:hover,
-#start:focus {
-    right: 27px;
-    bottom: 27px;
-    height: 66px;
-    width: 66px;
-    border-radius: 33px;
-    font-size: 36px;
-    background-color: aquamarine;
-}
-
-#start:focus {
-    outline: none;
+    right: 0px;
+    bottom: 0px;
+    height: 100px;
+    width: 100px;
+    background-color: #e7e7e7;
+    border:none;
 }
 
 #mBackdrop {
@@ -113,7 +105,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: red;
 }
 
 #modal {
@@ -136,8 +128,10 @@ a:focus {
     min-width: 350px;
     min-height: 300px;
     margin: 40px auto;
-    background-color: white;
-    border-radius: 15px;
+    background-color: #fcfbff;
+    border-radius: 5px;
+    border: double;
+    border-color: #322b3a;
 }
 
 .mHeader {
@@ -183,7 +177,7 @@ a:focus {
     flex: 6 200px;
     padding: 8px;
     font-size: 20px;
-    border: 1px solid lightgrey;
+    border: 1px solid #e7e7e7;
 }
 
 .eventInput textarea {
@@ -198,7 +192,7 @@ a:focus {
 
 .mFooter button {
     font-size: 20px;
-    background-color: white;
+    background-color: #fcfbff;
     color: grey;
     border: 1px solid grey;
     border-radius: 5px;
@@ -208,13 +202,14 @@ a:focus {
 }
 
 
-.mFooter .mDone {
-    background-color: aquamarine;
-    color: white;
-}
+    .mFooter .mDone {
+        border:none;
+        background-color: #322b3a;
+        color: #fcfbff;
+    }
 
 .mFooter .mDone:hover {
-    background-color: mediumaquamarine;
+    background-color: #342b3f;
 }
 
 
@@ -230,12 +225,28 @@ a:focus {
     background-color: yellow;
 }
 
+.eventRemind label {
+    width: 112px;
+    margin-right: 22px;
+}
+
+
 .reminderEnabled {
-    background-color: white;
+    margin-left:10px;
+    background-color: #fcfbff;
 }
 
 .dayDescrip {
+    color: #322b3a;
     padding-left:30px;
     width: 140px;
     Height: 100px;
+}
+
+.dayButton {
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #fcfbff;
+    background-color: #322b3a;
+    border:none;
 }
