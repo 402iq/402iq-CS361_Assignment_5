@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     background-color: #e7e7e7;
@@ -7,6 +8,7 @@ a {
     text-decoration: none;
 }
 
+/* Sets the style of the top-most banner where the site title lies, not the navbar below */
 .siteTitle {
     margin: 0 ;
     padding: 20px 30px;
@@ -16,6 +18,7 @@ a {
     color: #fcfbff;
 }
 
+/* from here till next comment are styles for the nav-bar */
 .navbar {
     background-color: #fcfbff;
     font-size: 20px;
@@ -54,6 +57,7 @@ a:focus {
     border-color:#322b3a;
 }
 
+/* the following defines the styles of each week (of which there are 5)*/
 .week {
     display: block;
     padding-bottom: 5px;
@@ -62,18 +66,20 @@ a:focus {
     width: 1514px;
 }
 
-    .week:first-of-type {
-        padding-top: 50px;
-    }
-    .week:last-of-type {
-        padding-bottom: 50px;
-    }
+/* specific padding for the top and bottom week */
+.week:first-of-type {
+    padding-top: 50px;
+}
+.week:last-of-type {
+    padding-bottom: 50px;
+}
 
-    .day {
-    background-color: #fcfbff;
-    height: 140px;
-    width: 200px;
-    display: inline-block;
+/* This is a single-line comment */
+.day {
+background-color: #fcfbff;
+height: 140px;
+width: 200px;
+display: inline-block;
 }
 
 .eventColor {
@@ -98,16 +104,7 @@ a:focus {
     border:none;
 }
 
-#mBackdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: red;
-}
-
+/* this is the semi-transparent background of brought up in after the modal-button is hit */
 #modal {
     position: fixed;
     top: 0;
@@ -115,6 +112,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 1010;
+    background-color: rgba(0,0,0,.85);
     overflow: scroll;
 }
 
@@ -122,6 +120,14 @@ a:focus {
     display: none;
 }
 
+
+/* FROM HERE ON
+    classes/id's prefixed with m are pretaining to the modal
+
+*/
+
+
+/* This is the actual element displayed when modal button is hit */
 .mContainer {
     width: auto;
     max-width: 600px;
@@ -144,6 +150,7 @@ a:focus {
     font-size: 30px;
 }
 
+/* close modal button styles*/
 .mClose{
     position: absolute;
     right: 10px;
@@ -159,6 +166,7 @@ a:focus {
     padding: 20px;
 }
 
+/* elements under eventInput pretain to the input text fields */
 .eventInput {
     display: flex;
     align-items: center;
@@ -190,6 +198,7 @@ a:focus {
     padding: 10px 10px 20px 10px;
 }
 
+/* bottons in the modal */
 .mFooter button {
     font-size: 20px;
     background-color: #fcfbff;
@@ -201,18 +210,18 @@ a:focus {
     cursor: pointer;
 }
 
-
-    .mFooter .mDone {
-        border:none;
-        background-color: #322b3a;
-        color: #fcfbff;
-    }
+/* styles specific to the done button in the modal */
+.mFooter .mDone {
+    border:none;
+    background-color: #322b3a;
+    color: #fcfbff;
+}
 
 .mFooter .mDone:hover {
     background-color: #342b3f;
 }
 
-
+/* c followed by a color are the class names of buttons that will change the color of the event */
 .cPurple {
     background-color: purple;
 }
@@ -225,17 +234,19 @@ a:focus {
     background-color: yellow;
 }
 
+/* specific alignment for the event-reminder line, because unlike other input fields, this line also has a button */
 .eventRemind label {
     width: 112px;
     margin-right: 22px;
 }
-
 
 .reminderEnabled {
     margin-left:10px;
     background-color: #fcfbff;
 }
 
+
+/* style for the element where event titles are written on each day */
 .dayDescrip {
     color: #322b3a;
     padding-left:30px;
@@ -243,6 +254,7 @@ a:focus {
     Height: 100px;
 }
 
+/* style for the button that brings up the modal, there is one on each day */
 .dayButton {
     margin-left: 10px;
     margin-top: 10px;
