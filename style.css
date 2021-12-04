@@ -18,7 +18,7 @@ a {
     color: #fcfbff;
 }
 
-/* from here till next comment are styles for the nav-bar */
+/* from here till next comment are styles for elements in the the nav-bar */
 .navbar {
     background-color: #fcfbff;
     font-size: 20px;
@@ -57,7 +57,7 @@ a:focus {
     border-color:#322b3a;
 }
 
-/* the following defines the styles of each week (of which there are 5)*/
+/* the following defines the styles of the week element which contains the day elements*/
 .week {
     display: block;
     padding-bottom: 5px;
@@ -74,12 +74,12 @@ a:focus {
     padding-bottom: 50px;
 }
 
-/* This is a single-line comment */
+/* style for the day elements in the calender */
 .day {
-background-color: #fcfbff;
-height: 140px;
-width: 200px;
-display: inline-block;
+    background-color: #fcfbff;
+    height: 140px;
+    width: 200px;
+    display: inline-block;
 }
 
 .eventColor {
